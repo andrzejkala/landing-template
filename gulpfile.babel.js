@@ -125,9 +125,10 @@ gulp.task('watch', function () {
   gulp.start('build');
 
   // Watch for changes
-  gulp.watch('src/js', ['js']);
-  gulp.watch('src/css', ['css']);
-  gulp.watch('src/img/**/*', ['img']);
-  gulp.watch('src/*.html', ['html']);
+  gulp.watch(['src/js/**/*', 'src/css/**/*', 'src/img/**/*', 'src/*.html'], ['build']);
+  // gulp.watch('src/js/**/*', ['build']);
+  // gulp.watch('src/css/**/*', ['build']);
+  // gulp.watch('src/img/**/*', ['build']);
+  // gulp.watch('src/*.html', ['build']);
 
 });
