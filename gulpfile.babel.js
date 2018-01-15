@@ -2,6 +2,7 @@
 
 // General imports
 import gulp from 'gulp';
+import zip from 'gulp-zip';
 import concat from 'gulp-concat';
 
 // CLEANUP task
@@ -94,6 +95,20 @@ gulp.task('static', ['cleanup'], () => {
 });
 
 
+// Create a .zip of the src
+// -------------------------
+gulp.task('zip-dev', () => {
+  gulp.src('src/**/*')
+    .pipe(zip('src.zip'))
+    .pipe(gulp.dest('zip'));
+});
+
+// Create a .zip of the dist
+gulp.task('zip-prod', () => {
+  gulp.src('dist/**/*')
+    .pipe(zip('dist.zip'))
+    .pipe(gulp.dest('zip'));
+});
 
 // Build task for packaging for production
 // ---------------------------------------
@@ -110,9 +125,9 @@ gulp.task('watch', function () {
   gulp.start('build');
 
   // Watch for changes
-  gulp.watch('./src/js', ['js']);
-  gulp.watch('./src/css', ['css']);
+  gulp.watch('src/js', ['js']);
+  gulp.watch('src/css', ['css']);
   gulp.watch('src/img/**/*', ['img']);
-  gulp.watch('./src/*.html', ['html']);
+  gulp.watch('src/*.html', ['html']);
 
 });

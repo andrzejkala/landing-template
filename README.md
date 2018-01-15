@@ -53,8 +53,6 @@ For development use the `watch` task, which triggers the `build` task on any fil
 gulp watch
 ```
 
-
-
 # Available tasks
 
 ## **General**
@@ -69,6 +67,12 @@ Tasks that are used as utilities for other tasks.
 
 - ### `watch`
   For development. Watches for changes in all project files and creates a production bundle in `/dist` directory on change.
+
+- ### `zip-dev`
+  Create a `.zip` bundle from all the `src` files.
+
+- ### `zip-prod`
+  Create a `.zip` bundle from all the `dist` files.
 
 ## **Css**
 
