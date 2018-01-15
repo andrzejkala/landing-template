@@ -59,55 +59,85 @@ gulp watch
 
 Tasks that are used as utilities for other tasks.
 
-- ### `cleanup`
+- ```
+  gulp cleanup
+  ```
   Task used to clean up the `dist` directory upon build.
 
-- ### `build`
+- ```
+  gulp build
+  ```
   Created a 'ready-to-use' production package in `/dist` directory.
 
-- ### `watch`
+- ```
+  gulp dev
+  ```
   For development. Watches for changes in all project files and creates a production bundle in `/dist` directory on change.
 
-- ### `zip-dev`
+- ```
+  gulp zip-dev
+  ```
   Create a `.zip` bundle from all the `src` files.
 
-- ### `zip-prod`
+- ```
+  gulp zip-prod
+  ```
   Create a `.zip` bundle from all the `dist` files.
 
-## **Css**
+## **CSS**
 
-- ### `fonts-css`
+- ```
+  gulp fonts-css
+  ```
   Bundles and minifies font specific `css` files.
 
-- ### `scss`
+- ```
+  gulp scss
+  ```
   Bundles and minifies all project related `scss` files.
 
-- ### `css`
+- ```
+  gulp css
+  ```
   Runs `cleanup` task and then all the above `css` related tasks.
 
 ## **Javascript**
 
-- ### `js-vendors`
+- ```
+  gulp js-vendors
+  ```
   Bundles together all the `vendor` scripts e.g. `jQuery` in a single, minified `vendors` file.
 
-- ### `js-dev`
+- ```
+  gulp js-dev
+  ```
   Bundles together and minifies all the project specific `js` files. Enables the use of `ES6`.
 
-- ### `js`
+- ```
+  gulp js
+  ```
   Runs `cleanup` task and then all the above `js` related tasks.
 
 ## **Static files**
 
-- ### `img`
+- ```
+  gulp img
+  ```
   Copies all the static image files from `/img` directory and it's subdirectories.
 
-- ### `fonts`
+- ```
+  gulp fonts
+  ```
   Copies all the font files – `.eot`, `.svg` etc.
 
-- ### `html`
+- ```
+  gulp html
+  ```
   Copies all the static `.html` files whilst replacing the links to `css` and `js` files.
 
-- ### `static`
+- ```
+  gulp static
+  ```
   Runs `cleanup` task and then all the above static files related tasks.
 
 
@@ -115,7 +145,6 @@ Tasks that are used as utilities for other tasks.
 
 It's a rough template that needs some more polish.
 
-- add some kind of `dev server`
 - provide some additional output for tasks
 - `cleanup` task needs some refinement (remove only files in currently processed directory e.g. `css`, not everything)
 - check if dependencies exist (e.g. `vendors`) and ignore if they aren't present

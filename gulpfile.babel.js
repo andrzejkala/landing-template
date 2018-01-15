@@ -117,15 +117,31 @@ gulp.task('build', () => {
 });
 
 
+// Build task for dev
+gulp.task('build-dev', () => {
+  gulp.start(['js', 'css', 'static'], () => {
+    connect.reload(); // Restart the dev server
+  });
+});
+
+import connect from 'gulp-connect';
+
 // Watch task for development
 // ----------------------------
-gulp.task('watch', function () {
+gulp.task('dev', function () {
 
   // Build on start
   gulp.start('build');
 
   // Watch for changes
-  gulp.watch(['src/js/**/*', 'src/css/**/*', 'src/img/**/*', 'src/*.html'], ['build']);
+  gulp.watch(['src/js/**/*', 'src/css/**/*', 'src/img/**/*', 'src/*.html'], ['build-dev']);
+
+  // Create a dev server for the project
+  connect.server({
+    name: "Dev server",
+    root: './dist',
+  });
+
   // gulp.watch('src/js/**/*', ['build']);
   // gulp.watch('src/css/**/*', ['build']);
   // gulp.watch('src/img/**/*', ['build']);
