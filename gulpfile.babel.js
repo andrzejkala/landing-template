@@ -131,16 +131,18 @@ import connect from 'gulp-connect';
 gulp.task('dev', function () {
 
   // Build on start
-  gulp.start('build');
+  gulp.start('build', () => {
+    // Create a dev server for the project
+    connect.server({
+      name: "Dev server",
+      root: './dist',
+    });
+  });
 
   // Watch for changes
   gulp.watch(['src/js/**/*', 'src/css/**/*', 'src/img/**/*', 'src/*.html'], ['build-dev']);
 
-  // Create a dev server for the project
-  connect.server({
-    name: "Dev server",
-    root: './dist',
-  });
+
 
   // gulp.watch('src/js/**/*', ['build']);
   // gulp.watch('src/css/**/*', ['build']);
