@@ -1,5 +1,3 @@
-# Landing page project template
-
 After wasting countless hours no setting this up every time or copypasting previous projects I've finally convinced myself to create a ready-to-use template for simple landing pages.
 
 Nothing fancy, just adding `ES6`, `SCSS` and some `minification` to the build process.
@@ -7,7 +5,7 @@ Nothing fancy, just adding `ES6`, `SCSS` and some `minification` to the build pr
 This template uses [Gulp](https://gulpjs.com) for building process.
 
 
-## Supported `/src` directory structure
+# Supported `/src` directory structure
 
 It's pretty basic and speaking for itself, but just for the purpose of keeping the information in one place.
 
@@ -57,95 +55,111 @@ gulp watch
 
 ## **General**
 
-Tasks that are used as utilities for other tasks.
+```
+gulp cleanup
+```
+Task used to clean up the `dist` directory upon build.
 
-- ```
-  gulp cleanup
-  ```
-  Task used to clean up the `dist` directory upon build.
+----
 
-- ```
-  gulp build
-  ```
-  Created a 'ready-to-use' production package in `/dist` directory.
+```
+gulp build
+```
+Created a 'ready-to-use' production package in `/dist` directory.
 
-- ```
-  gulp dev
-  ```
-  For development. Watches for changes in all project files and creates a production bundle in `/dist` directory on change.
+---
 
-- ```
-  gulp zip-dev
-  ```
-  Create a `.zip` bundle from all the `src` files.
+```
+gulp dev
+```
+For development. Watches for changes in all project files and creates a production bundle in `/dist` directory on change.
 
-- ```
-  gulp zip-prod
-  ```
-  Create a `.zip` bundle from all the `dist` files.
+---
+
+```
+gulp zip-dev
+```
+Create a `.zip` bundle from all the `src` files.
+
+---
+
+```
+gulp zip-prod
+```
+Create a `.zip` bundle from all the `dist` files.
 
 ## **CSS**
 
-- ```
-  gulp fonts-css
-  ```
-  Bundles and minifies font specific `css` files.
+```
+gulp fonts-css
+```
+Bundles and minifies font specific `css` files.
 
-- ```
-  gulp scss
-  ```
-  Bundles and minifies all project related `scss` files.
+---
 
-- ```
-  gulp css
-  ```
-  Runs `cleanup` task and then all the above `css` related tasks.
+```
+gulp scss
+```
+Bundles and minifies all project related `scss` files.
+
+---
+
+```
+gulp css
+```
+Runs `cleanup` task and then all the above `css` related tasks.
+
+---
 
 ## **Javascript**
 
-- ```
-  gulp js-vendors
-  ```
-  Bundles together all the `vendor` scripts e.g. `jQuery` in a single, minified `vendors` file.
+```
+gulp js-vendors
+```
+Bundles together all the `vendor` scripts e.g. `jQuery` in a single, minified `vendors` file.
 
-- ```
-  gulp js-dev
-  ```
-  Bundles together and minifies all the project specific `js` files. Enables the use of `ES6`.
+---
 
-- ```
-  gulp js
-  ```
-  Runs `cleanup` task and then all the above `js` related tasks.
+```
+gulp js-dev
+```
+Bundles together and minifies all the project specific `js` files. Enables the use of `ES6`.
+
+---
+
+```
+gulp js
+```
+Runs `cleanup` task and then all the above `js` related tasks.
+
+---
 
 ## **Static files**
 
-- ```
-  gulp img
-  ```
-  Copies all the static image files from `/img` directory and it's subdirectories.
+```
+gulp img
+```
+Copies all the static image files from `/img` directory and it's subdirectories.
 
-- ```
-  gulp fonts
-  ```
-  Copies all the font files – `.eot`, `.svg` etc.
+---
 
-- ```
-  gulp html
-  ```
-  Copies all the static `.html` files whilst replacing the links to `css` and `js` files.
+```
+gulp fonts
+```
+Copies all the font files – `.eot`, `.svg` etc.
 
-- ```
-  gulp static
-  ```
-  Runs `cleanup` task and then all the above static files related tasks.
+---
 
+```
+gulp html
+```
+Copies all the static `.html` files whilst replacing the links to `css` and `js` files.
 
-# Todo
+---
 
-It's a rough template that needs some more polish.
+```
+gulp static
+```
+Runs `cleanup` task and then all the above static files related tasks.
 
-- provide some additional output for tasks
-- `cleanup` task needs some refinement (remove only files in currently processed directory e.g. `css`, not everything)
-- check if dependencies exist (e.g. `vendors`) and ignore if they aren't present
-- load dependencies directly form marked places in `.html` files (`html` task improvement)
+---
