@@ -28,7 +28,7 @@ Of course this can be modified using the `gulpfile` but that's how it works out 
 Clone the repository
 
 ```
-git clone ddfd
+git clone git@github.com:andrzejkala/landing-template.git
 ```
 
 Install all the dependencies
