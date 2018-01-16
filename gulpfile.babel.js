@@ -26,11 +26,11 @@ gulp.task('fonts-css', () => {
     .pipe(gulp.dest('./dist/css/fonts'))
 });
 
-gulp.task('venodrs-css', () => {
+gulp.task('vendors-css', () => {
   return gulp.src('./src/css/vendors/*.css')
     .pipe(concat('vendors.min.css'))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./dist/css/vendors'))
+    .pipe(gulp.dest('./dist/css'))
 });
 
 gulp.task('scss', () => {
@@ -80,8 +80,9 @@ gulp.task('html', ['cleanup'], () => {
   return gulp.src('./src/*.html')
     .pipe(htmlreplace({
       'fonts': 'css/fonts/fonts.min.css',
-      'vendors': 'js/vendors.min.js',
+      'css-vendors': 'css/vendors.min.css',
       'css': 'css/bundle.min.css',
+      'js-vendors': 'js/vendors.min.js',
       'js': 'js/bundle.min.js'
     }))
     .pipe(gulp.dest('./dist'))
