@@ -46,7 +46,7 @@ import babel from 'gulp-babel';
 import uglifyJS from'gulp-uglify';
 
 gulp.task('js-vendors', () => {
-  return gulp.src('./src/js/vendors/*')
+  return gulp.src('./src/js/vendors/*.js')
     .pipe(concat('vendors.min.js'))
     .pipe(uglifyJS())
     .pipe(gulp.dest('./dist/js'))

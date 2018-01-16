@@ -96,6 +96,12 @@ gulp fonts-css
 Bundles and minifies font specific `css` files.
 
 ---
+```
+gulp vendors-css
+```
+Bundles and minifies `css` files from vendors.
+
+---
 
 ```
 gulp scss
