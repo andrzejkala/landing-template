@@ -26,6 +26,13 @@ gulp.task('fonts-css', () => {
     .pipe(gulp.dest('./dist/css/fonts'))
 });
 
+gulp.task('venodrs-css', () => {
+  return gulp.src('./src/css/vendors/*.css')
+    .pipe(concat('vendors.min.css'))
+    .pipe(minifyCSS())
+    .pipe(gulp.dest('./dist/css/vendors'))
+});
+
 gulp.task('scss', () => {
   return gulp.src(['./src/css/reset.css', './src/css/*'])
     .pipe(sass())
@@ -35,7 +42,7 @@ gulp.task('scss', () => {
 });
 
 gulp.task('css', ['cleanup'], () => {
-  gulp.start(['fonts-css', 'scss']);
+  gulp.start(['fonts-css', 'vendors-css', 'scss']);
 })
 
 
